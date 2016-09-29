@@ -1,0 +1,12 @@
+{
+  "name": "kote-components/php-absolute-path",
+  "description": "Function made to convert relative paths to absolute paths",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ]
+}
