@@ -11,8 +11,8 @@
   ],
   "require-dev": {
     "phpunit/phpunit": "^5.5",
-    "codeclimate/php-test-reporter": "^0.3.2",
-    "squizlabs/php_codesniffer": "^2.6"
+    "squizlabs/php_codesniffer": "^2.6",
+    "satooshi/php-coveralls": "^1.0"
   },
   "autoload": {
     "files": [
