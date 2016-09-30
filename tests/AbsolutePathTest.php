@@ -63,7 +63,7 @@ class AbsolutePathTest extends TestCase
             ['/my',                         '..'],
             ['/over-root',                  '../../../../over-root'],
             ['/my/root/some/other/file',    'some/other/file'],
-            ['/my/root/some/other',         'some/forward/..//other']
+            ['/my/root/some/other',         'some/forward/..///./other']
         ];
     }
 }
