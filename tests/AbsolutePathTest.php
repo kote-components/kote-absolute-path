@@ -57,6 +57,7 @@ class AbsolutePathTest extends TestCase
     public function dataProvider()
     {
         return [
+            ['/my/root/file',               'file'],
             ['/my/root',                    '.'],
             ['/my',                         '..'],
             ['/over-root',                  '../../../../over-root'],
