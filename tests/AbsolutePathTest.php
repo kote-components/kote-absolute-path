@@ -51,8 +51,6 @@ class AbsolutePathTest extends TestCase
         $this->assertEquals($expected, call_user_func($this->pathMaker, $relativePath));
     }
 
-
-
     /**
      * @return array
      */
