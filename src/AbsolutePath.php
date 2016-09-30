@@ -32,7 +32,8 @@ function absolutePathMaker($absoluteRootPath)
     $step = function ($location, $node) use ($isRootDir) {
         if ($node == '.' || $node == '') {
             return $location;
-        } if ($node == '..') {
+        }
+        if ($node == '..') {
             return $isRootDir($location) ? $location : pathinfo($location, PATHINFO_DIRNAME);
         }
         return $isRootDir($location) ?  $location . $node : $location . DIRECTORY_SEPARATOR . $node;
