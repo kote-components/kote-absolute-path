@@ -6,7 +6,7 @@
  * Time: 8:49 AM
  */
 
-namespace Kote\Utils\AbsolutePath;
+namespace Nerd\Utils\AbsolutePath;
 
 /**
  * Make function that converts relative paths to absolute paths.
@@ -15,7 +15,7 @@ namespace Kote\Utils\AbsolutePath;
  * @return \Closure ($relativePath: string) -> absolutePath: string
  * @throws \Exception
  */
-function absolutePathMaker($absoluteRootPath)
+function pathMaker($absoluteRootPath)
 {
     $isRootDir = function ($location) {
         return $location == '/';
