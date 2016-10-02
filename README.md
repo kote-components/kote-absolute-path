@@ -7,9 +7,9 @@
 ## Usage
 
 ```php
-use function Kote\Utils\AbsolutePath\absolutePathMaker;
+use function Nerd\Utils\AbsolutePath\pathMaker;
 
-$make = absolutePathMaker('/some/root');
+$make = pathMaker('/some/root');
 
 echo $make('file'); 		// /some/root/file
 echo $make('../foo.txt'); 	// /some/foo.txt
