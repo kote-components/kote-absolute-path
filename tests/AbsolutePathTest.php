@@ -8,7 +8,7 @@
 
 namespace tests;
 
-use function Kote\Utils\AbsolutePath\absolutePathMaker;
+use function Nerd\Utils\AbsolutePath\pathMaker;
 use PHPUnit\Framework\TestCase;
 
 class AbsolutePathTest extends TestCase
@@ -22,7 +22,7 @@ class AbsolutePathTest extends TestCase
 
     public function setUp()
     {
-        $this->pathMaker = absolutePathMaker($this->absoluteRootPath);
+        $this->pathMaker = pathMaker($this->absoluteRootPath);
     }
 
     /**
