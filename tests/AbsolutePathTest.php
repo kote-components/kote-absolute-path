@@ -38,7 +38,7 @@ class AbsolutePathTest extends TestCase
      */
     public function testSecondException()
     {
-        absolutePathMaker('not/absolute/path');
+        pathMaker('not/absolute/path');
     }
 
     /**
