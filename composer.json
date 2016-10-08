@@ -1,7 +1,8 @@
 {
-  "name": "nerd-components/absolute-path",
-  "description": "Function made to convert relative paths to absolute paths",
-  "minimum-stability": "stable",
+  "name": "nerd-components/path-utils",
+  "description": "Functions for manipulations with directory paths",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "MIT",
   "authors": [
     {
@@ -16,7 +17,7 @@
   },
   "autoload": {
     "files": [
-      "src/AbsolutePath.php"
+      "src/PathUtils.php"
     ]
   }
 }

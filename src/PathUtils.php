@@ -1,6 +1,6 @@
 <?php
 
-namespace Nerd\Utils\AbsolutePath;
+namespace Nerd\PathUtils;
 
 /**
  * @param string $current

@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roman
- * Date: 9/30/16
- * Time: 9:03 AM
- */
 
 namespace tests;
 
-use function Nerd\Utils\AbsolutePath\pathMaker;
+use function Nerd\PathUtils\pathMaker;
 use PHPUnit\Framework\TestCase;
 
 class AbsolutePathTest extends TestCase
