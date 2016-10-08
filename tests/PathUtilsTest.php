@@ -5,7 +5,7 @@ namespace tests;
 use function Nerd\PathUtils\pathMaker;
 use PHPUnit\Framework\TestCase;
 
-class AbsolutePathTest extends TestCase
+class PathUtilsTest extends TestCase
 {
     /**
      * @var string
