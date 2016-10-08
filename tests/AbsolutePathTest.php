@@ -28,14 +28,6 @@ class AbsolutePathTest extends TestCase
     /**
      * @expectedException \Exception
      */
-    public function testOneException()
-    {
-        call_user_func($this->pathMaker, '/absolute/path');
-    }
-
-    /**
-     * @expectedException \Exception
-     */
     public function testSecondException()
     {
         pathMaker('not/absolute/path');

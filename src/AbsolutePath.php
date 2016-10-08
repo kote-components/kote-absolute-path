@@ -1,12 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roman
- * Date: 9/30/16
- * Time: 8:49 AM
- */
 
 namespace Nerd\Utils\AbsolutePath;
+
+/**
+ * @param string $current
+ * @param string $to
+ * @return string
+ */
+function go($current, $to)
+{
+    $trimmed = trim($to, DIRECTORY_SEPARATOR);
+    $parts = explode(DIRECTORY_SEPARATOR, $trimmed);
+    $step = function ($current, $next) use (&$iter) {
+        if ($next == '.' || $next == '') {
+            return $current;
+        }
+        if ($next == '..') {
+            return pathinfo($current, PATHINFO_DIRNAME);
+        }
+        return rtrim($current, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $next;
+    };
+    return array_reduce($parts, $step, $current);
+}
 
 /**
  * Make function that converts relative paths to absolute paths.
@@ -17,10 +32,6 @@ namespace Nerd\Utils\AbsolutePath;
  */
 function pathMaker($absoluteRootPath)
 {
-    $isRootDir = function ($location) {
-        return $location == '/';
-    };
-
     $isAbsolutePath = function ($location) {
         return strlen($location) > 0 && $location[0] == '/';
     };
@@ -29,23 +40,7 @@ function pathMaker($absoluteRootPath)
         throw new \Exception("Path '$absoluteRootPath' is not absolute, but must.");
     }
 
-    $step = function ($location, $node) use ($isRootDir) {
-        if ($node == '.' || $node == '') {
-            return $location;
-        }
-        if ($node == '..') {
-            return $isRootDir($location) ? $location : pathinfo($location, PATHINFO_DIRNAME);
-        }
-        return $isRootDir($location) ?  $location . $node : $location . DIRECTORY_SEPARATOR . $node;
-    };
-
-    return function ($path) use ($isAbsolutePath, $absoluteRootPath, $step) {
-        if ($isAbsolutePath($path)) {
-            throw new \Exception("Path '$path' is absolute, but must not.");
-        }
-
-        $nodes = explode(DIRECTORY_SEPARATOR, $path);
-
-        return array_reduce($nodes, $step, $absoluteRootPath);
+    return function ($path) use ($absoluteRootPath) {
+        return go($absoluteRootPath, $path);
     };
 }
